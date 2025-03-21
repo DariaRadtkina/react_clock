@@ -28,12 +28,12 @@ export class App extends React.Component<{}, State> {
     this.setState({ hasClock: true });
   };
 
-  updateClockName = () => {
+  updateClockNameHandler = () => {
     this.setState({ clockName: getRandomName() });
   };
 
   componentDidMount(): void {
-    this.nameTimerID = window.setInterval(this.updateClockName, 3300);
+    this.nameTimerID = window.setInterval(this.updateClockNameHandler, 3300);
 
     document.addEventListener('contextmenu', this.handleRightClick);
     document.addEventListener('click', this.handleLeftClick);
